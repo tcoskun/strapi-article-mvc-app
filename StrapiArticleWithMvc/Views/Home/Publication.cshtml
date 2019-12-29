@@ -1,0 +1,13 @@
+﻿@using CommonMark;
+@model StrapiIntegration.Models.Article
+
+<title>@Model.Name</title>
+
+<div>
+    <h2>Publications</h2>
+</div>
+<div class="container" style="text-align: justify">
+    <h2>@Model.Name</h2>
+    <p><i>@Model.CreateDate.ToString("dd/MM/yyyy")</i></p>
+    <p>@Html.Raw(@CommonMarkConverter.Convert(Model.Description))</p>
+</div>

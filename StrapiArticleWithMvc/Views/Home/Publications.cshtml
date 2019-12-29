@@ -1,0 +1,23 @@
+﻿@using CommonMark;
+@model StrapiIntegration.Models.Article[]
+
+<div>
+    <h2>Publications</h2>
+</div>
+<div id="colorlib-practice">
+    <div class="container">
+        <div class="row">
+            @foreach (var article in Model)
+            {
+                <div class="col-md-6 text-center">
+                    <div onclick="window.location='/Home/Publications/@article.Url'">
+                        <h1><a href="#">@article.Name</a></h1>
+                        <div>
+                            <b><i>@article.CreateDate.ToString("dd/MM/yyyy")</i></b>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
